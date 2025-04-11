@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.cluster import KMeans  
   
 # 读取数据并预处理  
-df = pd.read_csv("input/machine-train1-1-1.csv", sep=",")
+df = pd.read_csv("input/SWaT_Dataset_Normal_v1.csv", sep=",")
 df = df.drop(df.columns[0], axis=1)  
 df = df.astype(float) 
 print(df.shape) 
@@ -19,7 +19,7 @@ cluster_labels = kmeans.fit_predict(column_means)
 cluster_centers = kmeans.cluster_centers_  
   
 # 加载异常数据集  
-anomaly_data = np.load("2_modified_smd_dataset_copy.npy", allow_pickle=True)  
+anomaly_data = np.load("SWaT_location_dataset.npy", allow_pickle=True)  
 anomaly_data = anomaly_data.astype(float)  
 print(anomaly_data.shape)
   
