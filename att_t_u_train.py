@@ -35,7 +35,7 @@ normal = pd.DataFrame(x_scaled)
 #print("ending")
 
 #Read attack data
-attack = pd.read_csv("input/modified_dataset.csv",sep=",")#, nrows=1000)
+attack = pd.read_csv("input/SWaT_location_dataset.csv",sep=",")#, nrows=1000)
 
 labels = [ float(label!= 'Normal' ) for label  in attack["Normal/Attack"].values]
 # attack = attack.drop(["Timestamp" , "Normal/Attack"] , axis=1)
