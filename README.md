@@ -30,7 +30,7 @@ SWaT、WADI、PUMP、SMD are in the folder "input".<br>
 If you want to execute the detection module, please run detection_step1, detection_step2, and detection_step3 in order, please use the following command:<br>
 <pre style="background-color: #f0f0f0;">
 <code>
-python detection_step\#.py
+python detection_step#.py
 </code>
 </pre>
 
