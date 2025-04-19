@@ -1,4 +1,4 @@
-This repo contains the codes for our submitted paper. Editor is a novel multi-resolution framework for MTS data cleaning that include detection, localization and repair modules:<br>
+This repository contains the code for the Editor, which is a local example used in our submitted paper. Specially, Editor is a novel multi-resolution framework for MTS data cleaning that include detection, localization and repair modules:<br>
 >Detection Module. Editor identifies erroneous windows containing errors across varying magnitudes.<br>
 Localization Module. Editor pinpoints the error cells within the erroneous window.<br>
 Repair Module. Editor repairs the specific error cells accurately.<br>
