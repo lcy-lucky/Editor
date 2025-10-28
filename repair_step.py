@@ -15,7 +15,7 @@ from TCN_GCN import GCNTCN
 from GCN import GCN
 
 attack = pd.read_csv("../input/SWaT_Dataset_Attack_v0.csv",sep=';')
-attack = attack.head(40000)
+# attack = attack.head(40000)
 # attack = pd.read_csv("../input/SWaT_Dataset_Attack_v0.csv",sep=';',skiprows=lambda x: x > 0 and x % 100 != 0)#, nrows=1000)
 attack = attack.drop(index=attack.loc[(attack['Normal/Attack']=='Attack')].index,axis=1)
 # attack = attack.drop(attack.loc[attack["Normal/Attack"] == "Attack"].index, inplace=True)
@@ -38,7 +38,7 @@ test_loader = torch.utils.data.DataLoader(data_utils.TensorDataset(
 
 #Read normal data
 normal = pd.read_csv("../input/SWaT_Dataset_Normal_v1.csv",skiprows=lambda x: x > 0 and x % 10 != 0)#, nrows=1000)
-normal = normal.head(40000)
+# normal = normal.head(40000)
 normal = normal.drop(["Timestamp" , "Normal/Attack"] , axis=1)
 normal = normal.drop(normal.columns[[4, 10, 11, 13, 15, 29, 31, 32, 43, 48, 50]], axis=1)
 print(normal.shape)
