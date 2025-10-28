@@ -19,7 +19,8 @@ cluster_labels = kmeans.fit_predict(column_means)
 cluster_centers = kmeans.cluster_centers_  
   
 # 加载异常数据集  
-anomaly_data = np.load("SWaT_location_dataset.npy", allow_pickle=True)  
+# anomaly_data = np.load("SWaT_location_dataset.npy", allow_pickle=True)  
+anomaly_data = np.load("SWaT_Dataset_Attack_v0.csv", allow_pickle=True)
 anomaly_data = anomaly_data.astype(float)  
 print(anomaly_data.shape)
   
