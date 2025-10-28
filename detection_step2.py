@@ -5,8 +5,8 @@ import seaborn as sns
 import torch
 import torch.nn as nn
 from utils import *
-# from att_u_net import Net
-from att_u_net_bf import bfNet
+from att_u_net import Net
+# from att_u_net_bf import bfNet
 # from u_net import Net
 from sklearn import preprocessing
 import torch.utils.data as data_utils
