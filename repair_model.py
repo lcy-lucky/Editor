@@ -28,7 +28,7 @@ class GraphConvolution(nn.Module):
         self.act = act
         self.use_bias = use_bias
         self.weight = Parameter(torch.FloatTensor(in_features, out_features))
-        self.attention = Parameter(torch.Tensor(12, 12))
+        self.attention = Parameter(torch.Tensor(32, 32))
         if self.use_bias:
             self.bias = Parameter(torch.Tensor(out_features))
         else:
@@ -62,8 +62,8 @@ class GraphConvolution(nn.Module):
 class GCN(nn.Module):
     def __init__(self, nfeat, nhid1, nclass, dropout):
         super(GCN, self).__init__()
-        self.nodevec1 = torch.nn.Parameter(torch.randn(12, 10).to(DEVICE), requires_grad=True).to(DEVICE)
-        self.nodevec2 = torch.nn.Parameter(torch.randn(10, 12).to(DEVICE), requires_grad=True).to(DEVICE)
+        self.nodevec1 = torch.nn.Parameter(torch.randn(32, 10).to(DEVICE), requires_grad=True).to(DEVICE)
+        self.nodevec2 = torch.nn.Parameter(torch.randn(10, 32).to(DEVICE), requires_grad=True).to(DEVICE)
         # torch.nn.init.xavier_uniform_(self.nodevec1)
         # torch.nn.init.xavier_uniform_(self.nodevec2)
         self.gc1 = GraphConvolution(nfeat, nhid1)
@@ -83,7 +83,7 @@ class GCN(nn.Module):
                 # gcn_output = F.dropout(gcn_output, self.dropout, training=self.training)
                 # gcn_output = F.relu(self.gc3(gcn_output, adj))
                 # gcn_output = F.dropout(gcn_output, self.dropout, training=self.training)
-                gcn_output = F.relu(self.gc4(gcn_output, adj)).view([1, 12, 32])
+                gcn_output = F.relu(self.gc4(gcn_output, adj)).view([1, 32, 32])
             else:
                 tmp_output = F.relu(self.gc1(x_input[i], adj))
                 tmp_output = F.dropout(tmp_output, self.dropout, training=self.training)
@@ -91,7 +91,7 @@ class GCN(nn.Module):
                 # tmp_output = F.dropout(tmp_output, self.dropout, training=self.training)
                 # tmp_output = F.relu(self.gc3(tmp_output, adj))
                 # tmp_output = F.dropout(tmp_output, self.dropout, training=self.training)
-                tmp_output = F.relu(self.gc4(tmp_output, adj)).view([1, 12, 32])
+                tmp_output = F.relu(self.gc4(tmp_output, adj)).view([1, 32, 32])
                 gcn_output = torch.cat((gcn_output, tmp_output),dim=0)
         return gcn_output
 
