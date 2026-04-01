@@ -20,6 +20,9 @@ scipy 1.10.1<br>
 </code>
 </pre>
 
+<h3><strong>:package: Datasets</strong></h3><br>
+The datasets used in this work, including SWaT, WADI, PUMP, SMD, and MSL, can be obtained according to the references provided in the paper, where the preprocessing procedures are also described. After downloading and preprocessing the datasets, please place them in the "input" folder.<br>
+
 <h3><strong>:rocket: Start</strong></h3><br>
 If you want to execute the detection module, please run detection_step1, detection_step2, and detection_step3 in order, please use the following command:<br>
 <pre style="background-color: #f0f0f0;">
