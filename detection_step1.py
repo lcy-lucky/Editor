@@ -56,7 +56,7 @@ labels = [1.0 if (np.sum(window) > 0) else 0 for window in windows_labels]
 
 
 BATCH_SIZE = 128
-N_EPOCHS = 100
+N_EPOCHS = 200
 DEVICE = 0
 
 windows_normal_train = windows_normal[:int(np.floor(.8 *  windows_normal.shape[0]))]
